@@ -1,0 +1,321 @@
+/* Category Page Styles */
+
+/* Prevent horizontal scroll */
+body,
+html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+.home,
+.bd,
+.dfxc,
+.main-site,
+.section.movies {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Remove extra backgrounds and borders from category page */
+.section.movies,
+.section.movies * {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure main-site contains all content */
+.main-site {
+  clear: both;
+  overflow: visible;
+  overflow-x: hidden !important;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Ensure section contains all content properly */
+.section.movies {
+  clear: both;
+  overflow: visible;
+  overflow-x: hidden !important;
+  margin-bottom: 3rem;
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure section header is contained */
+.section.movies .section-header {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  order: 1;
+  position: static !important;
+  transform: none !important;
+}
+
+/* Ensure tabs don't have negative margins affecting layout */
+.section.movies .section-header .aa-tbs {
+  margin-bottom: 1rem !important;
+}
+
+/* Post grid container */
+.section.movies .aa-cn,
+.section.movies #aa-movies {
+  order: 2 !important;
+  width: 100% !important;
+  margin-bottom: 2rem !important;
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+.section.movies .aa-tb,
+.section.movies #movies-a {
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Ensure post list is contained */
+.section.movies .post-lst,
+.section.movies ul.post-lst {
+  clear: both !important;
+  overflow: visible !important;
+  width: 100% !important;
+  position: static !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  transform: none !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  top: auto !important;
+  bottom: auto !important;
+  float: none !important;
+  order: 1 !important;
+}
+
+/* Ensure pagination comes after the list - it's nested inside aa-tb */
+.section.movies .navigation.pagination,
+.section.movies nav.navigation.pagination,
+.section.movies .aa-tb .navigation.pagination,
+.section.movies .aa-tb nav.navigation.pagination,
+.section.movies #movies-a .navigation.pagination {
+  clear: both !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  width: 100% !important;
+  position: static !important;
+  display: block !important;
+  transform: none !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  float: none !important;
+  order: 2 !important;
+}
+
+/* Ensure nav-links container is also static */
+.section.movies .navigation.pagination .nav-links {
+  position: static !important;
+  transform: none !important;
+  display: block !important;
+}
+
+/* Desktop Styles - Make cards smaller and responsive */
+@media (min-width: 992px) {
+  .section.movies .post-lst {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .section.movies .post-lst > li {
+    flex: 0 1 calc((100% - 2rem) / 3) !important;
+    -ms-flex: 0 1 calc((100% - 2rem) / 3) !important;
+    -webkit-box-flex: 0 !important;
+    max-width: calc((100% - 2rem) / 3) !important;
+    min-width: 220px !important;
+    margin-right: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .section.movies .post {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .section.movies .post-thumbnail {
+    width: 100% !important;
+    height: 0 !important;
+    padding-bottom: 140% !important;
+    position: relative !important;
+  }
+
+  .section.movies .post-thumbnail figure {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .section.movies .post-thumbnail figure:before {
+    display: none !important;
+  }
+
+  .section.movies .post-thumbnail figure img {
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section.movies .post .entry-title {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section.movies .post-lst {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .section.movies .post-lst > li {
+    flex: 0 1 calc((100% - 1.5rem) / 3) !important;
+    -ms-flex: 0 1 calc((100% - 1.5rem) / 3) !important;
+    -webkit-box-flex: 0 !important;
+    max-width: calc((100% - 1.5rem) / 3) !important;
+    min-width: 180px !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .section.movies .post {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .section.movies .post-thumbnail {
+    width: 100% !important;
+    height: 0 !important;
+    padding-bottom: 140% !important;
+    position: relative !important;
+  }
+
+  .section.movies .post-thumbnail figure {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .section.movies .post-thumbnail figure:before {
+    display: none !important;
+  }
+
+  .section.movies .post-thumbnail figure img {
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Mobile Responsive Styles for Post Grid */
+@media (max-width: 480px) {
+  .section.movies .post-lst {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    gap: 0.5rem !important;
+  }
+  
+  .section.movies .post-lst > li {
+    flex: 0 0 calc((100% - 1rem) / 3) !important;
+    -ms-flex: 0 0 calc((100% - 1rem) / 3) !important;
+    -webkit-box-flex: 0 !important;
+    max-width: calc((100% - 1rem) / 3) !important;
+    width: calc((100% - 1rem) / 3) !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem;
+  }
+
+  .section.movies .post-lst > li:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  .section.movies .post {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  .section.movies .post-thumbnail {
+    width: 100% !important;
+    height: 0 !important;
+    padding-bottom: 145% !important;
+    margin-bottom: 0.5rem !important;
+    position: relative !important;
+  }
+  
+  .section.movies .post-thumbnail figure {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .section.movies .post-thumbnail figure {
+    width: 100%;
+    height: 100%;
+  }
+
+  .section.movies .post-thumbnail figure:before {
+    display: none !important;
+  }
+
+  .section.movies .post-thumbnail figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative !important;
+  }
+
+  .section.movies .post .entry-title {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .section.movies .post .entry-header {
+    min-height: 2rem !important;
+    max-height: none !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+}

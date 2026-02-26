@@ -1,0 +1,36 @@
+{
+  "name": "anime-world-india-clone",
+  "version": "1.0.0",
+  "description": "ANIME WORLD INDIA CLONE - Open source project by Basirul Akhlak Borno.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Basirul Akhlak Borno",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/basirulakhlakborno/anime-world-india-clone.git"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.12.0",
+    "vite": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "react-helmet-async": "^2.0.5",
+    "sitemap": "^9.0.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-pwa": "^1.2.0",
+    "vite-plugin-sitemap": "^0.8.2"
+  }
+}

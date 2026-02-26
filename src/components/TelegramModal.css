@@ -1,0 +1,73 @@
+/**
+ * Telegram Modal Styles
+ */
+.telegram-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 20, 20, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Premium Anime Style */
+.telegram-modal-content.premium-anime {
+  background: rgba(30,32,38,0.92);
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18), 0 2px 24px rgba(0,0,0,0.22);
+  text-align: center;
+  max-width: 92vw;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+.telegram-modal-content.premium-anime h2 {
+  color: #f5f5f5;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+/* Created by Basirul Akhlak Borno */
+.telegram-link-btn {
+  display: inline-block;
+  background: rgba(245,245,245,0.12);
+  color: #f5f5f5;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.7rem 2.2rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: background 0.2s, color 0.2s;
+}
+.telegram-link-btn:hover {
+  background: rgba(245,245,245,0.22);
+  color: #fff;
+}
+.telegram-close-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(245,245,245,0.12);
+  color: #f5f5f5;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.telegram-close-btn:hover {
+  background: rgba(245,245,245,0.22);
+}
+.telegram-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0.7rem;
+  filter: none;
+}

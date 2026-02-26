@@ -1,0 +1,1594 @@
+/* Series Details Page Styles */
+
+:root {
+  --light-1: #181834;
+  --light-2: #181834;
+}
+
+/* Post Thumbnail Styles */
+.post-thumbnail {
+  position: relative;
+  display: inline-block;
+}
+
+.post-thumbnail .post-ql .Qlty {
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-thumbnail .year {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Episodes Base Styles */
+.post.episodes {
+  background-color: var(--body);
+  padding: 0rem;
+}
+
+.post.episodes:before {
+  display: none;
+}
+
+/* Category Badge Styles */
+.categoriesShow {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: inherit;
+  visibility: visible;
+  display: inline-block;
+  padding: 0.1rem;
+  margin-top: 1.5px;
+  margin-bottom: 1.5px;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+/* Overview Styles */
+.overviewCss {
+  font-family: Montserrat, sans-serif;
+  padding-bottom: 10px;
+}
+
+/* Video Styles */
+.video {
+  margin-bottom: auto;
+}
+
+/* Home Search Styles */
+.home-search {
+  max-width: -webkit-fill-available;
+}
+
+/* Widget Block Styles - scope to series details only to avoid affecting Home widgets */
+.single-series .wdgt-home.widget.section.widget_block,
+.series-details-page .wdgt-home.widget.section.widget_block {
+  margin-top: -4rem;
+  margin-bottom: -2rem;
+}
+
+.post.single {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  position: relative;
+}
+
+/* Override any float or positioning from torofilm-public.css */
+.post.single .post-thumbnail {
+  float: none !important;
+  width: auto !important;
+  margin-right: 0 !important;
+}
+
+.post.single .dfxb {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; /* Prevent wrapping to keep in same row */
+  align-items: flex-start !important; /* Align to top */
+  gap: 0 !important; /* Remove gap to allow margin to control spacing */
+  width: 100%;
+  box-sizing: border-box;
+  position: relative !important;
+  justify-content: flex-start !important; /* Align items to the left */
+}
+
+.post.single .dfxb * {
+  box-sizing: border-box;
+}
+
+.post.single .dfxb.alg-cr {
+  align-items: flex-start !important; /* Align items to top */
+}
+
+.post.single .dfxb > div:first-child {
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  flex-basis: auto !important;
+  width: auto;
+  min-width: 200px;
+  max-width: 300px;
+  order: 1;
+  position: relative !important;
+}
+
+/* Add space between episode count and play button */
+.post.single .dfxb > div:first-child br {
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 0.75rem;
+}
+
+.post.single .dfxb .post-thumbnail.alg-ss {
+  display: none !important; /* Empty div, hide it */
+  order: 2;
+}
+
+.post.single .dfxb aside.fg1 {
+  flex: 3 1 0% !important; /* Increase flex-grow to 3 to make it even wider */
+  flex-grow: 3 !important; /* Make it grow much more than the poster */
+  flex-shrink: 1 !important;
+  flex-basis: 0 !important;
+  min-width: 500px !important; /* Further increased minimum width */
+  max-width: none !important; /* Override torofilm-public.css max-width: 100% */
+  width: auto !important; /* Override any width constraints */
+  order: 3 !important; /* Ensure it stays as the third item */
+  align-self: flex-start !important;
+  display: block !important; /* Ensure it's displayed as block */
+  position: relative !important;
+  margin-left: 15rem !important; /* Very large margin to push it significantly to the right */
+  margin-right: 0 !important;
+  float: none !important; /* Prevent any float from affecting layout */
+  clear: none !important;
+  transform: translateX(0) !important; /* Ensure no transform is interfering */
+}
+
+.post.single .entry-title {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive title sizes - bigger on mobile */
+@media (max-width: 768px) {
+  .post.single .entry-title,
+  .post.single .dfxb .entry-title,
+  .post.single h1.entry-title,
+  .post.single .dfxb > div:first-child .entry-title,
+  .post.single .dfxb > div:first-child h1.entry-title {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .post.single .entry-title,
+  .post.single .dfxb .entry-title,
+  .post.single h1.entry-title,
+  .post.single .dfxb > div:first-child .entry-title,
+  .post.single .dfxb > div:first-child h1.entry-title,
+  .post.single .dfxb > div:first-child h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+.post.single .description {
+  line-height: 1.6;
+  opacity: 0.9;
+  max-height: 80px !important; /* Reduced height to show less text */
+  overflow-y: auto !important; /* Make it scrollable */
+  overflow-x: hidden !important;
+  padding-right: 0.5rem; /* Add padding for scrollbar */
+}
+
+/* Mobile - Adjust description height */
+@media (max-width: 768px) {
+  .post.single .description {
+    max-height: 100px !important; /* Slightly more height on mobile */
+  }
+}
+
+/* Style the scrollbar for description */
+.post.single .description::-webkit-scrollbar {
+  width: 8px;
+}
+
+.post.single .description::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.post.single .description::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+.post.single .description::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.post.single .description {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05);
+}
+
+/* Force horizontal layout for Genres and Languages */
+/* Override torofilm-public.css .fwp class which sets flex-wrap: wrap */
+/* Target the exact HTML structure: <ul class="cast-lst dfx fwp"> */
+ul.cast-lst.dfx.fwp,
+ul.cast-lst.dfx,
+ul.cast-lst.fwp,
+ul.cast-lst,
+.cast-lst.dfx.fwp,
+.cast-lst.dfx,
+.cast-lst.fwp,
+.cast-lst,
+.post.single .cast-lst.dfx.fwp,
+.post.single .cast-lst.dfx,
+.post.single .cast-lst.fwp,
+.post.single .cast-lst,
+.entry-header .cast-lst.dfx.fwp,
+.entry-header .cast-lst.dfx,
+.entry-header .cast-lst.fwp,
+.entry-header .cast-lst,
+aside.fg1 .cast-lst.dfx.fwp,
+aside.fg1 .cast-lst.dfx,
+aside.fg1 .cast-lst.fwp,
+aside.fg1 .cast-lst,
+.post.single aside.fg1 .cast-lst.dfx.fwp,
+.post.single aside.fg1 .cast-lst.dfx,
+.post.single aside.fg1 .cast-lst.fwp,
+.post.single aside.fg1 .cast-lst,
+.post.single aside.fg1 header.entry-header ul.cast-lst.dfx.fwp {
+  display: flex !important;
+  flex-direction: row !important; /* Display horizontally */
+  flex-wrap: nowrap !important; /* Keep items on same line - override fwp class */
+  -ms-flex-wrap: nowrap !important;
+  -webkit-flex-wrap: nowrap !important;
+  gap: 2rem !important;
+  margin-top: 1rem;
+  align-items: flex-start !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
+
+ul.cast-lst > li,
+ul.cast-lst.dfx > li,
+ul.cast-lst.fwp > li,
+ul.cast-lst.dfx.fwp > li,
+.cast-lst > li,
+.cast-lst.dfx > li,
+.cast-lst.fwp > li,
+.cast-lst.dfx.fwp > li,
+.post.single .cast-lst > li,
+.post.single .cast-lst.dfx > li,
+.post.single .cast-lst.fwp > li,
+.post.single .cast-lst.dfx.fwp > li,
+.entry-header .cast-lst > li,
+.entry-header .cast-lst.dfx > li,
+.entry-header .cast-lst.fwp > li,
+.entry-header .cast-lst.dfx.fwp > li,
+aside.fg1 .cast-lst > li,
+aside.fg1 .cast-lst.dfx > li,
+aside.fg1 .cast-lst.fwp > li,
+aside.fg1 .cast-lst.dfx.fwp > li,
+.post.single aside.fg1 .cast-lst > li,
+.post.single aside.fg1 .cast-lst.dfx > li,
+.post.single aside.fg1 .cast-lst.fwp > li,
+.post.single aside.fg1 .cast-lst.dfx.fwp > li {
+  flex: 0 0 auto !important; /* Don't grow or shrink */
+  min-width: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  display: flex !important;
+  flex-direction: column !important; /* Stack label and content vertically within each li */
+  margin-right: 0 !important; /* Override torofilm-public.css margin-right: 2rem */
+  flex-basis: auto !important;
+  -ms-flex: 0 0 auto !important;
+  -webkit-box-flex: 0 !important;
+}
+
+.cast-lst span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.cast-lst .genres,
+.cast-lst .loadactor {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.cast-lst .genres a,
+.cast-lst .loadactor a {
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cast-lst .genres a:hover,
+.cast-lst .loadactor a:hover {
+  color: var(--primary);
+}
+
+.overviewSeparator {
+  width: 1px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.25);
+  align-self: center;
+  margin: 0 0.5rem;
+}
+
+/* Entry meta container */
+.entry-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.duration,
+.year,
+.network {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+/* Font Awesome Regular (far) class styling */
+.duration.far,
+.year.far,
+.network.far {
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", sans-serif;
+  font-weight: 400;
+}
+
+/* Font Awesome icons alignment - ensure icons are centered with text */
+.duration.fa-clock::before,
+.year.fa-calendar::before,
+.network.fa-broadcast-tower::before {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5em;
+  margin-right: 0.5rem;
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", sans-serif;
+  font-weight: 400;
+  align-self: center;
+}
+
+.duration .overviewCss,
+.year .overviewCss,
+.network .overviewCss {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+/* Network image alignment */
+.network .overviewCss img.cn-icon {
+  vertical-align: middle;
+  display: inline-block;
+  align-self: center;
+}
+
+/* Main site container - ensure proper ordering */
+.main-site {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Ensure article comes first */
+.main-site > article.post.single {
+  order: 1 !important;
+}
+
+/* Episodes Section */
+.section.episodes {
+  margin-top: 0 !important;
+  margin-bottom: 2rem;
+  padding-top: 0 !important;
+  clear: both;
+  order: 2 !important; /* Ensure it comes after overview */
+}
+
+/* Recommended Series Section - Desktop */
+.main-site > .section.recommended-series,
+.main-site > #widget_list_episodes-6 {
+  order: 3 !important; /* Ensure it comes after episodes */
+  flex: 0 0 auto !important;
+}
+
+.choose-season {
+  position: relative;
+}
+
+.choose-season .aa-lnk {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+.choose-season .aa-lnk .choose-label {
+  font-size: 0.75rem;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  display: block;
+}
+
+.choose-season .aa-lnk .season-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.choose-season .aa-lnk .season-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.choose-season .aa-lnk .season-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.2;
+}
+
+.choose-season .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  margin-top: 0.5rem;
+  background-color: var(--gray-light);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.choose-season:hover .sub-menu,
+.choose-season .sub-menu.on {
+  display: block;
+}
+
+.choose-season .sub-menu li {
+  list-style: none;
+}
+
+.choose-season .sub-menu li button,
+.choose-season .sub-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--light);
+  text-decoration: none;
+  transition: background-color 0.2s;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.choose-season .sub-menu li button:hover,
+.choose-season .sub-menu li a:hover,
+.choose-season .sub-menu li.sel-temp button,
+.choose-season .sub-menu li.sel-temp a {
+  background-color: var(--gray);
+  color: var(--primary);
+}
+
+.choose-season .sub-menu li.sel-temp > a {
+  color: var(--primary);
+  opacity: 1;
+}
+
+/* Style the scrollbar for season dropdown - blurry like description */
+.choose-season .sub-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.choose-season .sub-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.choose-season .sub-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+.choose-season .sub-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.choose-season .sub-menu {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05);
+}
+
+/* Episode Cards - Landscape Poster with Name Below */
+.post.episodes.lg {
+  background-color: var(--body);
+  padding: 0 !important;
+  position: relative !important; /* Ensure num-epi can be positioned relative to card */
+  display: flex !important;
+  flex-direction: column !important; /* Vertical layout - poster on top, name below */
+  align-items: stretch !important;
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+.post.episodes.lg {
+  position: relative; /* Ensure num-epi can be positioned relative to card */
+}
+
+.post.episodes.lg .post-thumbnail {
+  width: 100% !important; /* Full width of card */
+  height: auto !important;
+  padding-bottom: 56.25% !important; /* 16:9 aspect ratio (landscape) */
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0.5rem !important;
+  position: relative !important;
+  overflow: visible !important; /* Allow num-epi to be visible */
+  z-index: 1 !important;
+  border-radius: 0 !important; /* Remove rounded corners */
+  pointer-events: none !important; /* Allow clicks to pass through to link */
+}
+
+.post.episodes.lg .post-thumbnail figure {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.post.episodes.lg .post-thumbnail figure:before {
+  display: none !important;
+}
+
+.post.episodes.lg .post-thumbnail img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  filter: none;
+  display: block !important;
+  border-radius: 0 !important;
+}
+
+.post.episodes.lg .entry-header {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding: 0 0.5rem 0.25rem 0.5rem !important; /* Remove top padding */
+  position: relative !important;
+  min-width: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important; /* Don't reserve space for absolutely positioned children */
+}
+
+/* Position num-epi on top-left of poster thumbnail */
+/* Since num-epi is inside entry-header, position it absolutely relative to card container */
+/* Ensure lnk-blk link is clickable on mobile */
+.post.episodes.lg .lnk-blk {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+  cursor: pointer !important;
+}
+
+/* Ensure all child elements allow clicks to pass through to link */
+.post.episodes.lg > *:not(.lnk-blk) {
+  pointer-events: none !important;
+}
+
+/* Re-enable pointer events for interactive elements if needed */
+.post.episodes.lg .lnk-blk {
+  pointer-events: auto !important;
+}
+
+.post.episodes.lg .entry-header .num-epi {
+  position: absolute !important;
+  top: 0.5rem !important; /* Position at top-left of thumbnail */
+  left: 0.5rem !important;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  pointer-events: none !important; /* Allow clicks to pass through */
+  z-index: 11 !important; /* Above link but still clickable */
+  padding: 0.375rem 0.5rem;
+  border-radius: 0 !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1rem;
+  margin: 0 !important; /* Override margin-bottom from torofilm-public.css */
+  z-index: 10;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: none;
+  /* Move up to thumbnail: use transform to move up by thumbnail height */
+  /* Thumbnail height is 56.25% of card width, but we need to move up from entry-header */
+  /* Use a large negative translateY - will be adjusted based on actual card width */
+  transform: translateY(calc(-100% - 0.5rem));
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Ensure entry-title is visible and properly displayed */
+/* Override torofilm-public.css .post.episodes .entry-title {display:inline} */
+.post.episodes.lg .entry-header .entry-title,
+.post.episodes.lg .entry-header h2,
+.post.episodes.lg .entry-header h2.entry-title,
+.post.episodes.lg .entry-title {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  color: var(--light) !important;
+  font-weight: 400 !important;
+  height: auto !important;
+  min-height: 1.2rem !important;
+}
+
+.post.episodes.lg .entry-title,
+.post.episodes.lg .entry-header h2,
+.post.episodes.lg .entry-header h2.entry-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  display: block !important; /* Override inline from torofilm-public.css */
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: var(--light) !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 1.2rem !important;
+}
+
+.post.episodes.lg .view {
+  display: none !important; /* Hide view button */
+}
+
+.post.episodes.lg .post-thumbnail .play {
+  display: none;
+}
+
+/* Episode List Container - Responsive grid */
+.section.episodes .post-lst {
+  display: flex !important;
+  flex-direction: row !important; /* Horizontal layout */
+  flex-wrap: wrap !important; /* Allow wrapping */
+  gap: 1rem !important;
+  margin: 0 !important;
+}
+
+/* Override responsive grid classes for episodes - Desktop: 3 cards per row */
+.section.episodes .post-lst.rcl2 > li,
+.section.episodes .post-lst.rcl3a > li,
+.section.episodes .post-lst.rcl4b > li,
+.section.episodes .post-lst.rcl3c > li,
+.section.episodes .post-lst.rcl4d > li,
+.section.episodes .post-lst.rcl8e > li {
+  flex: 0 0 calc((100% - 2rem) / 3) !important; /* 3 cards per row with gap */
+  max-width: calc((100% - 2rem) / 3) !important;
+  width: calc((100% - 2rem) / 3) !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Tablet: 2 cards per row */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section.episodes .post-lst.rcl2 > li,
+  .section.episodes .post-lst.rcl3a > li,
+  .section.episodes .post-lst.rcl4b > li,
+  .section.episodes .post-lst.rcl3c > li,
+  .section.episodes .post-lst.rcl4d > li,
+  .section.episodes .post-lst.rcl8e > li {
+    flex: 0 0 calc((100% - 1rem) / 2) !important; /* 2 cards per row */
+    max-width: calc((100% - 1rem) / 2) !important;
+    width: calc((100% - 1rem) / 2) !important;
+  }
+
+  .section.episodes .post-lst {
+    gap: 1rem !important;
+  }
+
+  .post.episodes.lg {
+    padding: 0 !important;
+  }
+
+  .post.episodes.lg .entry-header {
+    padding: 0 0.5rem 0.25rem 0.5rem !important; /* Remove top padding */
+  }
+
+  .post.episodes.lg .entry-title {
+    font-size: 0.85rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .post.episodes.lg .num-epi {
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.5rem !important;
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+  }
+}
+
+/* Small tablets and large phones: 2 cards per row */
+@media (min-width: 481px) and (max-width: 640px) {
+  .section.episodes .post-lst.rcl2 > li,
+  .section.episodes .post-lst.rcl3a > li,
+  .section.episodes .post-lst.rcl4b > li,
+  .section.episodes .post-lst.rcl3c > li,
+  .section.episodes .post-lst.rcl4d > li,
+  .section.episodes .post-lst.rcl8e > li {
+    flex: 0 0 calc((100% - 0.75rem) / 2) !important; /* 2 cards per row */
+    max-width: calc((100% - 0.75rem) / 2) !important;
+    width: calc((100% - 0.75rem) / 2) !important;
+  }
+
+  .section.episodes .post-lst {
+    gap: 0.75rem !important;
+  }
+
+  .post.episodes.lg .entry-title {
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .post.episodes.lg .num-epi {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.4rem !important;
+  }
+}
+
+/* Desktop: 3 cards per row */
+@media (min-width: 1025px) {
+  .section.episodes .post-lst.rcl2 > li,
+  .section.episodes .post-lst.rcl3a > li,
+  .section.episodes .post-lst.rcl4b > li,
+  .section.episodes .post-lst.rcl3c > li,
+  .section.episodes .post-lst.rcl4d > li,
+  .section.episodes .post-lst.rcl8e > li {
+    flex: 0 0 calc((100% - 2rem) / 3) !important; /* 3 cards per row */
+    max-width: calc((100% - 2rem) / 3) !important;
+    width: calc((100% - 2rem) / 3) !important;
+  }
+
+  .section.episodes .post-lst {
+    gap: 1rem !important;
+  }
+
+  .post.episodes.lg .entry-header {
+    padding: 0 0.5rem 0.25rem 0.5rem !important; /* Remove top padding */
+  }
+
+  .post.episodes.lg .entry-title {
+    font-size: 0.875rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .post.episodes.lg .num-epi {
+    font-size: 0.875rem !important;
+    padding: 0.375rem 0.5rem !important;
+  }
+}
+
+/* Background Images - Fixed at top and bottom only, pinned in place */
+.bghd {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  transform: translateZ(0) !important; /* Force hardware acceleration */
+  backface-visibility: hidden !important;
+}
+
+.bghd img.TPostBg {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 20% !important;
+  opacity: 0.4 !important;
+  z-index: -1 !important;
+  display: block !important;
+  transform: translateZ(0) !important; /* Force hardware acceleration */
+  will-change: transform !important;
+}
+
+/* Black overlay that increases with scroll */
+.bghd .bg-overlay {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.1s ease !important;
+}
+
+.bgft {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  transform: translateZ(0) !important; /* Force hardware acceleration */
+  backface-visibility: hidden !important;
+}
+
+.bgft img.TPostBg {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 80% !important;
+  opacity: 0.2 !important;
+  -webkit-filter: grayscale(1) !important;
+  filter: grayscale(1) !important;
+  z-index: -1 !important;
+  display: block !important;
+  transform: translateZ(0) !important; /* Force hardware acceleration */
+  will-change: transform !important;
+}
+
+/* Comments Section */
+.comments-area {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--gray);
+  border-radius: 0.5rem;
+  clear: both;
+}
+
+.comments-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--light);
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--gray-light);
+  border-radius: 0.25rem;
+}
+
+.comment-body {
+  position: relative;
+}
+
+.comment-meta {
+  margin-bottom: 0.75rem;
+}
+
+.comment-author .fn {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.comment-author .says {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.comment-metadata {
+  font-size: 0.875rem;
+  color: var(--text);
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+.comment-metadata a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.comment-content {
+  margin-top: 0.75rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.comment-content p {
+  margin: 0;
+}
+
+.reply {
+  margin-top: 0.75rem;
+}
+
+.comment-reply-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.comment-reply-link:hover {
+  text-decoration: underline;
+}
+
+.comment-form {
+  margin-top: 2rem;
+}
+
+.comment-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+  font-weight: 500;
+}
+
+.comment-form textarea,
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--gray-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  color: var(--light);
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.comment-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.comment-form .form-submit {
+  margin-top: 1rem;
+}
+
+.comment-form .submit {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.comment-form .submit:hover {
+  background-color: var(--link-hover);
+}
+
+.comment-notes {
+  font-size: 0.875rem;
+  color: var(--text);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.required {
+  color: var(--primary);
+}
+
+.pagination.comments-nav {
+  margin-bottom: 1.5rem;
+}
+
+.page-numbers {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.25rem;
+  background-color: var(--gray-light);
+  color: var(--light);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.page-numbers:hover,
+.page-numbers.current {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Responsive - Only stack on mobile */
+@media (max-width: 768px) {
+  /* Force episode titles to be visible on mobile */
+  .post.episodes.lg .entry-header h2.entry-title,
+  .post.episodes.lg .entry-header .entry-title,
+  .post.episodes.lg .entry-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 1.2rem !important;
+    color: var(--light) !important;
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .post.single {
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .post.single .dfxb {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    margin-bottom: 0 !important; /* Remove margin, let article handle it */
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .post.single .dfxb > div:first-child {
+    width: 100%;
+    max-width: 100% !important;
+    text-align: center;
+    order: 1 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Make title bigger on mobile */
+  .post.single .dfxb > div:first-child h1.entry-title,
+  .post.single .dfxb > div:first-child h1,
+  .post.single .entry-title {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Add space between episode count and play button on mobile */
+  .post.single .dfxb > div:first-child br {
+    margin-bottom: 1rem !important;
+  }
+
+  .post.single .dfxb aside.fg1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important; /* Full width on mobile */
+    order: 2 !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important; /* Remove bottom margin, let article handle it */
+    padding: 15px !important; /* Ensure padding is consistent */
+    padding-bottom: 15px !important; /* Ensure bottom padding */
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure the aside footer doesn't extend beyond */
+  .post.single .dfxb aside.fg1 footer {
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+
+  /* Ensure article.post.single has proper spacing and closes properly */
+  article.post.single {
+    margin-bottom: 0 !important; /* Remove extra margin */
+    padding-bottom: 0 !important; /* Remove extra padding */
+    clear: both !important;
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    overflow: visible !important; /* Allow content to be visible */
+    min-height: auto !important;
+    z-index: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Ensure the article closes properly before episodes */
+  article.post.single::after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0 !important; /* Remove extra height */
+    overflow: hidden;
+    visibility: hidden !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Ensure overview section doesn't overflow */
+  .post.single .dfxb aside.fg1 {
+    max-height: none !important;
+    overflow: visible !important; /* Allow content to be visible */
+    position: relative !important;
+    z-index: 1 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Ensure overview content is contained */
+  .post.single .dfxb aside.fg1 .entry-header {
+    overflow: visible !important; /* Allow content to be visible */
+    max-height: none !important;
+    position: relative !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Ensure footer doesn't cause overflow */
+  .post.single .dfxb aside.fg1 footer {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Ensure overview doesn't extend beyond article */
+  .post.single .dfxb {
+    overflow: visible !important; /* Allow content to be visible */
+    max-height: none !important;
+  }
+
+  /* Episodes Section - Minimal gap after overview */
+  .section.episodes {
+    margin-top: 1rem !important; /* Reduced gap */
+    margin-bottom: 2rem !important;
+    padding: 0 !important; /* Remove extra padding */
+    padding-top: 0 !important;
+    clear: both !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 10 !important; /* Higher z-index to ensure it's above */
+    display: block !important;
+    min-height: 0 !important;
+    top: 0 !important; /* Reset any top positioning */
+    left: 0 !important; /* Reset any left positioning */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Ensure episodes section always appears after article */
+  main.main-site > .section.episodes {
+    margin-top: 1rem !important; /* Reduced gap */
+    clear: both !important;
+    position: relative !important;
+    top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Add minimal spacing between article and episodes */
+  article.post.single + .section.episodes {
+    margin-top: 1rem !important; /* Reduced gap */
+    clear: both !important;
+    position: relative !important;
+    top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Ensure no negative margins or positioning that could cause overlap */
+  /* But allow entry-title to be visible */
+  .section.episodes * {
+    position: relative !important;
+  }
+
+  .section.episodes .entry-title,
+  .section.episodes .post.episodes.lg .entry-title,
+  .section.episodes .post.episodes.lg .entry-header .entry-title,
+  .section.episodes .post.episodes.lg .entry-header h2 {
+    position: relative !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 1.2rem !important;
+    color: var(--light) !important;
+  }
+
+  /* Prevent any absolute positioning that could cause overlap */
+  .section.episodes,
+  .section.episodes .section-header,
+  .section.episodes .choose-season,
+  .section.episodes .post-lst {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+
+  .section.episodes .section-header {
+    margin-bottom: 1.5rem !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure episode list container is properly separated */
+  .section.episodes .choose-season,
+  .section.episodes .post-lst,
+  .section.episodes .swiper-container {
+    margin-top: 1rem !important;
+  }
+
+  .section.episodes .post-lst {
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  /* Comments Section */
+  .comments-area {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    padding: 1rem !important;
+    clear: both !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Recommended Series Section */
+  .section.recommended-series,
+  .widget.recommended-series,
+  #widget_list_episodes-6 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    padding: 1rem 0 !important;
+    clear: both !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    order: 3 !important; /* Ensure it comes after episodes */
+    padding: 1rem 0 !important;
+    clear: both !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Episode List Items - Mobile: 2 cards per row (bigger) */
+  .post.episodes.lg {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-direction: column !important; /* Vertical layout - poster on top, name below */
+    align-items: stretch !important;
+  }
+
+  .post.episodes.lg .post-thumbnail {
+    width: 100% !important;
+    padding-bottom: 56.25% !important; /* Maintain 16:9 aspect ratio */
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .post.episodes.lg .entry-header {
+    padding: 0 0.5rem 0.25rem 0.5rem !important; /* Remove top padding */
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 1.5rem !important; /* Ensure space for title */
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .post.episodes.lg .entry-header h2,
+  .post.episodes.lg .entry-title,
+  .post.episodes.lg .entry-header .entry-title,
+  .post.episodes.lg .entry-header h2.entry-title {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: var(--light) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 1.2rem !important;
+    max-height: none !important;
+    font-weight: 400 !important;
+  }
+
+  .post.episodes.lg .num-epi {
+    font-size: 0.65rem !important;
+    padding: 0.25rem 0.375rem !important;
+    top: 0.25rem !important;
+    left: 0.25rem !important;
+    position: absolute !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    transform: translateY(calc(-100% - 0.5rem)) !important;
+  }
+
+  /* Mobile (≤480px): 3 cards per row */
+  .section.episodes .post-lst {
+    gap: 0.5rem !important;
+    flex-direction: row !important; /* Horizontal layout on mobile */
+    flex-wrap: wrap !important;
+  }
+
+  .section.episodes .post-lst.rcl2 > li,
+  .section.episodes .post-lst.rcl3a > li,
+  .section.episodes .post-lst.rcl4b > li,
+  .section.episodes .post-lst.rcl3c > li,
+  .section.episodes .post-lst.rcl4d > li,
+  .section.episodes .post-lst.rcl8e > li {
+    flex: 0 0 calc((100% - 1rem) / 3) !important; /* 3 cards per row with gap */
+    max-width: calc((100% - 1rem) / 3) !important;
+    width: calc((100% - 1rem) / 3) !important;
+  }
+
+  /* Main Site Container */
+  .main-site {
+    padding: 0 1rem !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: column !important; /* Stack sections vertically */
+    gap: 0 !important; /* Let margins handle spacing */
+  }
+
+  /* Ensure all sections in main-site stack properly */
+  .main-site > * {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Article should take only the space it needs */
+  .main-site > article.post.single {
+    flex: 0 0 auto !important;
+  }
+
+  /* Episodes section should come after article */
+  .main-site > .section.episodes {
+    flex: 0 0 auto !important;
+    order: 2 !important; /* Ensure it comes after article */
+  }
+
+  /* Recommended Series section should come after episodes */
+  .main-site > .section.recommended-series,
+  .main-site > #widget_list_episodes-6 {
+    flex: 0 0 auto !important;
+    order: 3 !important; /* Ensure it comes after episodes */
+  }
+
+  /* Entry Header */
+  .entry-header {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Cast List - Stack vertically on mobile */
+  .cast-lst > li {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* On mobile, allow wrapping */
+  ul.cast-lst,
+  ul.cast-lst.dfx,
+  ul.cast-lst.fwp,
+  ul.cast-lst.dfx.fwp,
+  .cast-lst,
+  .cast-lst.dfx,
+  .cast-lst.fwp,
+  .cast-lst.dfx.fwp,
+  .post.single .cast-lst,
+  .post.single .cast-lst.dfx,
+  .post.single .cast-lst.fwp,
+  .post.single .cast-lst.dfx.fwp {
+    flex-wrap: wrap !important; /* Allow wrapping on mobile */
+  }
+
+  ul.cast-lst > li,
+  ul.cast-lst.dfx > li,
+  ul.cast-lst.fwp > li,
+  ul.cast-lst.dfx.fwp > li,
+  .cast-lst > li,
+  .cast-lst.dfx > li,
+  .cast-lst.fwp > li,
+  .cast-lst.dfx.fwp > li {
+    min-width: 100%;
+  }
+}
+
+/* Tablet - Keep side by side but ensure minimum width */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .post.single .dfxb {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important;
+  }
+
+  .post.single .dfxb > div:first-child {
+    order: 1 !important;
+    flex: 0 0 auto !important;
+    max-width: 280px !important;
+  }
+
+  .post.single .dfxb aside.fg1 {
+    order: 3 !important;
+    flex: 3 1 0% !important; /* Further increased flex-grow for wider overview */
+    flex-grow: 3 !important;
+    min-width: 450px !important; /* Further increased minimum width for tablet */
+    margin-left: 15rem !important; /* Large margin to push it to the right */
+  }
+}
+
+/* Desktop - Ensure Overview stays on right */
+@media (min-width: 1025px) {
+  .post.single .dfxb {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 2rem !important;
+  }
+
+  .post.single .dfxb > div:first-child {
+    order: 1 !important;
+    flex: 0 0 auto !important;
+    max-width: 300px !important;
+  }
+
+  .post.single .dfxb aside.fg1 {
+    order: 3 !important;
+    flex: 3 1 0% !important; /* Further increased flex-grow for wider overview */
+    flex-grow: 3 !important;
+    min-width: 500px !important; /* Further increased minimum width for desktop */
+    margin-left: 15rem !important; /* Large margin to push it to the right */
+  }
+}
+
+@media (max-width: 425px) {
+  .options .btn span {
+    display: inline;
+  }
+
+  /* Very small mobile: 2 cards per row (bigger cards) */
+  .section.episodes .post-lst {
+    gap: 0.5rem !important;
+  }
+
+  .section.episodes .post-lst.rcl2 > li,
+  .section.episodes .post-lst.rcl3a > li,
+  .section.episodes .post-lst.rcl4b > li,
+  .section.episodes .post-lst.rcl3c > li,
+  .section.episodes .post-lst.rcl4d > li,
+  .section.episodes .post-lst.rcl8e > li {
+    flex: 0 0 calc((100% - 0.5rem) / 2) !important; /* 2 cards per row */
+    max-width: calc((100% - 0.5rem) / 2) !important;
+    width: calc((100% - 0.5rem) / 2) !important;
+  }
+
+  .post.episodes.lg .entry-header {
+    padding: 0 0.375rem 0.2rem 0.375rem !important; /* Remove top padding */
+  }
+
+  .post.episodes.lg .entry-title {
+    font-size: 0.65rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .post.episodes.lg .num-epi {
+    font-size: 0.6rem !important;
+    padding: 0.2rem 0.3rem !important;
+    top: 0.2rem !important;
+    left: 0.2rem !important;
+    position: absolute !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    transform: translateY(calc(-100% - 0.5rem)) !important;
+  }
+}

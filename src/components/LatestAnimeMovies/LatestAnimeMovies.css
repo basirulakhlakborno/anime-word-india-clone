@@ -1,0 +1,225 @@
+/* Latest Anime Movies - Override width to 223px */
+/* Ensure section header appears before swiper */
+#widget_list_movies_series-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+#widget_list_movies_series-4 .section-header {
+  order: 1;
+}
+
+#widget_list_movies_series-4 > div {
+  order: 2;
+}
+
+.latest-movies-series-swiper-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.latest-movies-series-swiper-container .swiper-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: flex-start !important;
+  transition-timing-function: linear !important;
+}
+
+.latest-movies-series-swiper-container .swiper-slide {
+  width: auto !important;
+  flex-shrink: 0;
+  height: auto;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.latest-movies-series-swiper-slide {
+  width: 331px !important;
+  height: 495px;
+  flex-shrink: 0 !important;
+}
+
+/* Force width even if Swiper sets inline styles */
+.latest-movies-series-swiper-container .swiper-slide.latest-movies-series-swiper-slide {
+  width: 331px !important;
+  min-width: 331px !important;
+  max-width: 331px !important;
+}
+
+.latest-movies-series-swiper-slide > li {
+  width: 100%;
+  height: 100%;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 331px;
+  height: 495px;
+}
+
+.post .entry-header {
+  width: 100%;
+  min-height: 2.5rem;
+}
+
+.post .entry-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+}
+
+.post-thumbnail {
+  position: relative;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  width: 331px;
+  height: 450px;
+}
+
+.post-thumbnail figure {
+  margin-bottom: 0;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.post-thumbnail figure:before {
+  content: '';
+  padding-top: 0;
+  display: none;
+}
+
+.post-thumbnail figure img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100% !important;
+  border-radius: 0.2rem;
+  object-fit: cover;
+  transition: all 0.4s ease-in-out;
+  display: block;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .latest-movies-series-swiper-slide {
+    width: 200px !important;
+    height: 380px;
+  }
+
+  .latest-movies-series-swiper-container .swiper-slide.latest-movies-series-swiper-slide {
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+  }
+
+  .post {
+    width: 200px;
+    height: 380px;
+  }
+
+  .post-thumbnail {
+    width: 200px;
+    height: 345px;
+  }
+
+  .post .entry-title {
+    font-size: 0.75rem;
+  }
+
+  .post .entry-title {
+    font-size: 0.75rem;
+  }
+
+  .post .entry-header {
+    min-height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .latest-movies-series-swiper-slide {
+    width: 110px !important;
+    height: 162px !important;
+  }
+
+  .latest-movies-series-swiper-container .swiper-slide.latest-movies-series-swiper-slide {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+  }
+
+  .latest-movies-series-swiper-slide > li {
+    height: 162px !important;
+  }
+
+  .post {
+    width: 110px !important;
+    height: 162px !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  .post-thumbnail {
+    width: 110px !important;
+    height: 140px !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .post .entry-title {
+    font-size: 0.65rem !important;
+    margin-bottom: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .post .entry-header {
+    min-height: 1.5rem !important;
+    max-height: 1.5rem !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Remove section spacing on mobile */
+  #widget_list_movies_series-4.section {
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  #widget_list_movies_series-4 .section-header {
+    margin-bottom: 0.5rem !important;
+  }
+
+  #widget_list_movies_series-4 > div {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .latest-movies-series-swiper-container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    height: auto !important;
+  }
+
+  .latest-movies-series-swiper-container .swiper-wrapper {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Scale down spidercat container on mobile */
+  .spidercat-container-sp25 {
+    min-height: 162px !important;
+    max-height: 162px !important;
+    height: 162px !important;
+  }
+}

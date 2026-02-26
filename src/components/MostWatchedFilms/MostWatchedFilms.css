@@ -1,0 +1,175 @@
+.most-watched-films-section {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.most-watched-films-section .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.most-watched-films-section .section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.most-watched-container {
+  position: relative;
+  overflow: visible;
+}
+
+.most-watched-swiper {
+  overflow: visible;
+}
+
+.most-watched-swiper .swiper-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.most-watched-swiper .swiper-slide {
+  height: auto;
+  overflow: visible;
+}
+
+.most-watched-item {
+  display: block;
+  position: relative;
+  width: 180px;
+  height: 270px;
+  border-radius: 8px;
+  overflow: visible;
+  text-decoration: none;
+}
+
+.most-watched-item:hover {
+  transform: none;
+}
+
+.rank-number {
+  position: absolute;
+  left: -15px;
+  bottom: -10px;
+  font-size: 10rem;
+  font-weight: 900;
+  color: #000;
+  z-index: 2;
+  text-shadow: 
+    -3px -3px 0 #fff,
+    3px -3px 0 #fff,
+    -3px 3px 0 #fff,
+    3px 3px 0 #fff,
+    -5px 0 8px rgba(255, 255, 255, 0.8);
+  line-height: 1;
+  opacity: 0.95;
+  font-family: 'Arial Black', sans-serif;
+  pointer-events: none;
+}
+
+.film-poster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-left: 28px;
+}
+
+.film-poster::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.film-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+}
+
+.film-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  display: none;
+}
+
+.film-title-overlay h3 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .rank-number {
+    left: -12px;
+  }
+  
+  .most-watched-item {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rank-number {
+    left: -10px;
+  }
+  
+  .most-watched-item {
+    height: 280px;
+  }
+  
+  .most-watched-films-section .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .rank-number {
+    left: -5px;
+    font-size: 6rem;
+    bottom: -5px;
+  }
+  
+  .most-watched-item {
+    width: 120px;
+    height: 180px;
+  }
+  
+  .film-poster {
+    margin-left: 12px;
+  }
+  
+  .film-title-overlay h3 {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+  
+  .most-watched-films-section {
+    padding: 0 0.5rem;
+  }
+  
+  .most-watched-films-section .section-title {
+    font-size: 1.25rem;
+  }
+}

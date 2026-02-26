@@ -1,0 +1,226 @@
+/* Main menu container */
+#mainMenu {
+  /* Keeping position-related rules commented */
+  /* position:fixed; */
+  /* bottom:0; */
+  /* overflow:hidden; */
+  /* position: absolute; */
+}
+
+/* Individual list items */
+li.li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+/* Links inside menu items */
+a.botao {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: initial !important;
+  text-decoration-color: initial !important;
+  color: var(--primary);
+  line-height: 1;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease; /* Smooth transition for color changes */
+  padding: 4px 4px 6px 4px;
+  gap: 0;
+  flex: 1;
+}
+
+a.botao.active {
+  color: #fff; /* Change the color of the selected item if you want */
+  position: relative;
+}
+
+/* Add a bar/underline below the active menu item */
+a.botao.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Adjust this to control the distance from the text */
+  width: 100%;
+  height: 3px; /* Adjust the thickness of the bar */
+  background-color: var(--primary); /* You can set this to any color you prefer */
+}
+
+/* Container for the buttons in the menu */
+ul.ulbotoes {
+  margin: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  line-height: 1;
+  list-style-type: none;
+  padding: 6px 0 8px 0;
+  position: fixed;
+  text-align: center;
+  background: #020209;
+  width: 100%;
+  bottom: 0;
+  right: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+  border-top: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* General menu styling */
+.menugeral {
+  background-color: #0f0f0f;
+  width: 100%;
+  border: none;
+  border-top: none;
+  outline: none;
+  box-shadow: none;
+}
+
+#mobile-contact-bar {
+  border: none;
+  border-top: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Floating Action Button */
+.li-fab {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100; /* Ensure it floats above the menu */
+}
+
+/* FAB styling */
+a.botao-fab {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  font-size: 28px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  z-index: 100; /* Ensure it's above other content */
+}
+
+/* Small text under icons in menu */
+.textomenu {
+  font-weight: 500;
+  font-size: 9px;
+  display: block;
+  color: #c5c5c5;
+  margin-top: 0;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+/* Home button text alignment - move it down to align with other labels */
+a.botao .textomenu#shuffle_anim,
+#shuffle_anim.textomenu {
+  padding-top: 1.5rem !important;
+  margin-top: 0 !important;
+  align-self: center;
+  display: block;
+}
+
+/* Alternative selector for HOME text */
+li.li a.botao .textomenu#shuffle_anim {
+  padding-top: 1.5rem !important;
+  margin-top: 0 !important;
+}
+
+/* Font Awesome icons styling */
+a.botao i,
+a.botao .fa,
+a.botao .fas,
+a.botao .fab {
+  font-size: 1.2rem;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0;
+  line-height: 1;
+  margin-top: 0;
+}
+
+a.botao:hover i,
+a.botao:hover .fa,
+a.botao:hover .fas,
+a.botao:hover .fab {
+  color: var(--light);
+}
+
+/* Remove spacing from br tag completely */
+a.botao br {
+  display: none;
+  line-height: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  content: "";
+}
+
+/* Hiding the menu on larger screens */
+@media (min-width: 762px) {
+  #mainMenu {
+    display: none;
+  }
+}
+
+/* Other elements for small screen adjustments */
+@media (max-width: 762px) {
+  .kw {
+    display: none !important;
+  }
+}
+
+@keyframes roamWholeScreen {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10vw, -20vh) rotate(30deg); /* Move to the right and up */
+  }
+  50% {
+    transform: translate(-80vw, 30vh) rotate(-30deg); /* Move to the left and down */
+  }
+  75% {
+    transform: translate(50vw, -10vh) rotate(20deg); /* Move to the right and up */
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg); /* Back to center */
+  }
+}
+
+@keyframes roamAfter {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(10px, -5px) rotate(5deg); /* Move right and slightly up, rotate */
+  }
+  40% {
+    transform: translate(-10px, -10px) rotate(-5deg); /* Move left and up, rotate left */
+  }
+  60% {
+    transform: translate(-5px, 10px) rotate(3deg); /* Move left and down */
+  }
+  80% {
+    transform: translate(5px, 5px) rotate(-3deg); /* Move right and down */
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg); /* Back to center */
+  }
+}

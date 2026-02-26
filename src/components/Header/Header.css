@@ -1,0 +1,412 @@
+/* Telegram Bar */
+#tg-bar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tg-btn {
+  display: flex;
+  align-items: center;
+  background: #181834;
+  color: #fff;
+  border: 1px solid #0088cc;
+  border-radius: 20px;
+  padding: 6px 15px;
+  text-decoration: none;
+  margin-left: 50px;
+}
+
+.tg-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  color: #0088cc;
+}
+
+.tg-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.tg-primary {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tg-secondary {
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+.close-btn {
+  margin-left: -20px;
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .tg-btn {
+    padding: 5px 12px;
+  }
+  .tg-secondary {
+    max-width: 150px;
+    white-space: normal;
+  }
+}
+
+/* Home Search */
+.home-search {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32rem;
+  margin-bottom: calc(3 * var(--size));
+  padding-top: var(--size);
+  position: relative;
+  overflow: visible;
+}
+
+.home-search {
+  max-width: -webkit-fill-available;
+}
+
+/* Ensure parent container allows dropdown overflow */
+.header-search-wrapper {
+  position: relative;
+  overflow: visible !important;
+  z-index: 1000;
+}
+
+.header-search-wrapper > .home-search {
+  overflow: visible !important;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Override any global .bd styles that might clip */
+.bd.header-search-wrapper {
+  overflow: visible !important;
+}
+
+.home-search .logo {
+  margin-bottom: calc(2 * var(--size));
+}
+
+.home-search .logo img {
+  height: 4rem;
+}
+
+/* Search Container */
+.search-container {
+  width: 100%;
+  max-width: 37rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  overflow: visible !important;
+  z-index: 1000;
+}
+
+/* Search Form */
+.home-search .search {
+  position: relative;
+  width: 100%;
+  z-index: 1001;
+  overflow: visible !important;
+}
+
+/* Search Input Wrapper - Horizontal Layout */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.home-search .search input {
+  flex: 1;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 3rem;
+  border-radius: 5rem !important;
+  background-color: rgba(40, 50, 45, 0.3) !important;
+  border: 2px solid white !important;
+  line-height: calc(2.5rem - 4px) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+.home-search .search-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  line-height: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search Dropdown - Below Input */
+.search-dropdown {
+  position: fixed !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: auto !important;
+  min-width: 100%;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  background-color: var(--gray);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 99999 !important;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+  padding: 0.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+/* Blurry scrollbar for search dropdown */
+.search-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-dropdown::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+/* Created by Basirul Akhlak Borno */
+.search-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+.search-dropdown::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* Calculate dropdown position dynamically via JavaScript */
+.search-dropdown.positioned {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.search-dropdown .loading {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-dropdown .dropdown-title {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.25rem;
+}
+
+.search-dropdown .dropdown-item {
+  padding: 0;
+  margin: 0;
+}
+
+.search-dropdown .dropdown-item a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--light);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  gap: 0.5rem;
+}
+
+.search-dropdown .dropdown-item a:hover {
+  background-color: var(--gray-light);
+}
+
+.search-dropdown .dropdown-more {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+.search-dropdown .dropdown-more a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.search-dropdown .dropdown-more a:hover {
+  background-color: var(--link-hover);
+}
+
+/* Font Awesome play-circle icon */
+.fa-play-circle:before {
+  content: "\f144";
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", sans-serif;
+  font-weight: 900;
+}
+
+/* Type badge styling */
+.search-dropdown span[class*="type-"] {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--light);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* Logo */
+.logo {
+  margin-bottom: 0;
+}
+
+.logo img {
+  height: 3rem;
+  width: auto;
+}
+
+.logo img[src*="-ico"] {
+  height: 2rem;
+}
+
+/* Search */
+.search {
+  position: relative;
+}
+
+/* Search input placeholder */
+.search input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .search-container {
+    padding: 0 0.5rem;
+  }
+
+  .home-search .search input {
+    height: 2.25rem;
+    font-size: 0.9rem;
+    padding-left: 0.75rem;
+    padding-right: 2.5rem;
+  }
+
+  .search-dropdown {
+    max-height: 300px;
+  }
+
+  .search-dropdown .dropdown-item a {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .search-dropdown .dropdown-title {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-search .search input {
+    height: 2rem;
+    font-size: 0.85rem;
+    padding-left: 0.6rem;
+    padding-right: 2.25rem;
+  }
+
+  .search-dropdown {
+    max-height: 250px;
+  }
+
+  .search-dropdown .dropdown-item a {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .search-dropdown span[class*="type-"] {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
+
+/* Font Awesome icons */
+.fa,
+.fas,
+.fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands", sans-serif;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.fab {
+  font-weight: 400;
+}
+
+.tg-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  color: #0088cc;
+}
+
+.fa-search:before {
+  content: "\f002";
+}
+
+.fa-telegram:before {
+  content: "\f2c6";
+}

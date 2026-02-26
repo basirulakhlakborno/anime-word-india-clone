@@ -1,0 +1,80 @@
+/* Language Logo Slider Styles for gs_logo_area_4 */
+#gs_logo_area_4:not(.verticaltickerdown):not(.verticalticker) .gs_logo_container {
+  margin-left: -5px;
+}
+
+#gs_logo_area_4:not(.verticaltickerdown):not(.verticalticker) .gs_logo_container {
+  margin-right: -5px;
+}
+
+#gs_logo_area_4:not(.verticaltickerdown):not(.verticalticker) .gs_logo_single--wrapper {
+  padding: 5px;
+}
+
+#gs_logo_area_4 ul.gs-logo-filter-cats {
+  text-align: center !important;
+}
+
+#gs_logo_area_4 .gs_logo_single--wrapper {
+  width: 20%;
+}
+
+#gs_logo_area_4 .gs_logo_container.swiper-container .gs_logo_single--wrapper {
+  width: auto !important;
+  flex-shrink: 0;
+}
+
+/* Desktop: Make images bigger */
+#gs_logo_area_4 .gs_logo_single {
+  padding: 28px 20px !important;
+}
+
+#gs_logo_area_4 .gs_logo_single img {
+  max-width: 180px !important;
+  max-height: 260px !important;
+}
+
+@media (max-width: 1023px) {
+  #gs_logo_area_4 .gs_logo_single--wrapper {
+    width: 25%;
+  }
+  #gs_logo_area_4 .gs_logo_container.swiper-container .gs_logo_single--wrapper {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #gs_logo_area_4 .gs_logo_single--wrapper {
+    width: 33.333333333333%;
+    padding: 4px !important;
+  }
+  #gs_logo_area_4 .gs_logo_container.swiper-container .gs_logo_single--wrapper {
+    width: auto !important;
+  }
+  #gs_logo_area_4 .gs_logo_single {
+    padding: 20px 12px !important;
+  }
+  #gs_logo_area_4 .gs_logo_single img {
+    max-width: 130px !important;
+    max-height: 180px !important;
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #gs_logo_area_4 .gs_logo_single--wrapper {
+    padding: 3px !important;
+  }
+  #gs_logo_area_4 .gs_logo_single {
+    padding: 16px 8px !important;
+  }
+  #gs_logo_area_4 .gs_logo_single img {
+    max-width: 110px !important;
+    max-height: 150px !important;
+  }
+  #gs_logo_area_4:not(.verticaltickerdown):not(.verticalticker) .gs_logo_container {
+    margin-left: -3px !important;
+    margin-right: -3px !important;
+  }
+}

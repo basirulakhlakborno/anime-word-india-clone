@@ -1,0 +1,265 @@
+/* Skeleton Loading Styles */
+.skeleton {
+  position: relative;
+  background: linear-gradient(90deg, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Card Skeleton - matches actual post card with 140% aspect ratio */
+.skeleton-card {
+  width: 100%;
+  height: 0;
+  padding-bottom: 140%;
+  border-radius: 8px;
+  position: relative;
+  background: linear-gradient(90deg, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* Carousel card skeleton - smaller width for carousels */
+.skeleton-card.carousel {
+  min-width: 150px;
+  width: 150px;
+  padding-bottom: 225px; /* 150px * 1.5 = 225px for similar aspect */
+}
+
+/* Post Grid Skeleton - matches actual post-lst layout */
+.skeleton-post-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skeleton-post-grid .skeleton-post-item {
+  flex: 0 1 calc((100% - 2rem) / 3);
+  max-width: calc((100% - 2rem) / 3);
+  min-width: 220px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.skeleton-post-item .skeleton-card {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.skeleton-post-item .skeleton-title {
+  width: 90%;
+  height: 14px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* List Item Skeleton */
+.skeleton-list-item {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Text Skeleton */
+.skeleton-text {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+.skeleton-text.medium {
+  width: 80%;
+}
+
+/* Title Skeleton */
+.skeleton-title {
+  width: 70%;
+  height: 24px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+/* Image Skeleton */
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* Details Page Skeleton - matches actual details layout */
+.skeleton-details {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.skeleton-details-poster {
+  width: 100%;
+  max-width: 300px;
+  height: 14rem;
+  border-radius: 5%;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.skeleton-details-content {
+  flex: 1;
+  background-color: var(--light-1);
+  padding: 15px 15px 0 15px;
+  border-radius: 20px 20px 0 0;
+}
+
+.skeleton-details-content .skeleton-title {
+  width: 60%;
+  height: 24px;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.skeleton-details-content .skeleton-text {
+  margin-bottom: 1rem;
+  height: 16px;
+  line-height: 1.6;
+}
+
+.skeleton-details-content .skeleton-text.short {
+  width: 40%;
+  height: 14px;
+}
+
+/* Overview section skeleton */
+.skeleton-overview-header {
+  width: 30%;
+  height: 20px;
+  margin-bottom: 1.25rem;
+  font-weight: 900;
+}
+
+.skeleton-genres-languages {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-genres-languages > div {
+  flex: 1;
+}
+
+.skeleton-genres-languages .skeleton-text {
+  width: 80%;
+  height: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skeleton-meta-item {
+  width: 60px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* Tablet Responsive */
+@media (min-width: 768px) and (max-width: 991px) {
+  .skeleton-post-grid {
+    gap: 0.75rem;
+  }
+  
+  .skeleton-post-grid .skeleton-card {
+    flex: 0 1 calc((100% - 1.5rem) / 3);
+    max-width: calc((100% - 1.5rem) / 3);
+    min-width: 180px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .skeleton-post-grid {
+    gap: 0.5rem;
+  }
+  
+  .skeleton-post-grid .skeleton-card {
+    flex: 0 0 calc((100% - 1rem) / 3);
+    max-width: calc((100% - 1rem) / 3);
+    margin-bottom: 1rem;
+  }
+  
+  .skeleton-details {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .skeleton-details-poster {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .skeleton-details-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton-post-grid .skeleton-card {
+    flex: 0 0 calc((100% - 0.5rem) / 3);
+    max-width: calc((100% - 0.5rem) / 3);
+  }
+  
+  .skeleton-post-item .skeleton-title {
+    height: 12px;
+    font-size: 0.7rem;
+  }
+}
